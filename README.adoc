@@ -6,4 +6,5 @@ This project is using https://github.com/spring-guides/tut-react-and-spring-data
 
 https://spring.io/guides/tutorials/react-and-spring-data-rest/ examples step by step!
 
-For starting and updating the project Please run using : "mvnw spring-boot:run" comand and open project in:http://localhost:8080
+For starting and updating the project Please run using : "mvnw spring-boot:run" comand and open project in:
+http://localhost:8080
