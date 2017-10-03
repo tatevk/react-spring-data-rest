@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// start::create-dialog[]
+
 class CreateDialog extends React.Component {
 
 	constructor(props) {
@@ -56,5 +56,4 @@ class CreateDialog extends React.Component {
 	}
 
 }
-// end::create-dialog[]
 export default CreateDialog;

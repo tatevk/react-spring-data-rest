@@ -5,7 +5,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import client from './client';
 import follow from './follow';
-import CreateDialog from './createDialog';
+import CreateDialog from './components/createDialog';
+import ToDoList from './components/ToDoList';
 
 const root = '/api';
 
@@ -110,45 +111,6 @@ class App extends React.Component {
 }
 // end::app[]
 
-
-
-class ToDoList extends React.Component{
-	render() {
-		var todoes = this.props.todoes.map(todo =>
-			<Todo key={todo._links.self.href} todo={todo}/>
-		);
-		return (
-		    <div>
-		        <h1>My To Do List!!!!!!!!</h1>
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>What To Do</th>
-                            <th>When To Do</th>
-                            <th>Status of To Doeee</th>
-                        </tr>
-                        {todoes}
-                    </tbody>
-                </table>
-			</div>
-		)
-	}
-}
-// end::todo -list[]
-
-// tag::todo[]
-class Todo extends React.Component{
-	render() {
-		return (
-			<tr>
-				<td>{this.props.todo.todoList}</td>
-				<td>{this.props.todo.time}</td>
-				<td>{this.props.todo.status}</td>
-			</tr>
-		)
-	}
-}
-// end::todo[]
 
 // tag::render[]
 ReactDOM.render(
