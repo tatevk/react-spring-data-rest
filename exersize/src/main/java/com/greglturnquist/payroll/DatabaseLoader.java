@@ -26,16 +26,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class DatabaseLoader implements CommandLineRunner {
 
-	private final EmployeeRepository repository;
+	private final ToDoListRepository repository;
 
 	@Autowired
-	public DatabaseLoader(EmployeeRepository repository) {
+	public DatabaseLoader(ToDoListRepository repository) {
 		this.repository = repository;
 	}
 
 	@Override
 	public void run(String... strings) throws Exception {
-		this.repository.save(new Employee("Frodo", "Baggins", "ring bearer"));
+		this.repository.save(new ToDoList("ToDo1", "time", "started"));
+		this.repository.save(new ToDoList("ToDo2", "time", "in progress"));
+		this.repository.save(new ToDoList("ToDo3", "time", "ended"));
 	}
 }
 // end::code[]

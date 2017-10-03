@@ -15,13 +15,31 @@
  */
 package com.greglturnquist.payroll;
 
-import org.springframework.data.repository.CrudRepository;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import lombok.Data;
 
 /**
  * @author Greg Turnquist
  */
 // tag::code[]
-public interface EmployeeRepository extends CrudRepository<Employee, Long> {
+@Data
+@Entity
+public class ToDoList {
 
+	private @Id @GeneratedValue Long id;
+	private String todoList;
+	private String time;
+	private String status;
+
+	private ToDoList() {}
+
+	public ToDoList(String todoList, String time, String status) {
+		this.todoList = todoList;
+		this.time = time;
+		this.status = status;
+	}
 }
 // end::code[]
