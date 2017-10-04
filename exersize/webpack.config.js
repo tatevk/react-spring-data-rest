@@ -1,15 +1,14 @@
 var path = require('path');
 var webpack = require('webpack');
 
-
 module.exports = {
     entry: './src/main/js/app.js',
     devtool: 'sourcemaps',
      watchOptions: {
     poll: true
             },
-    cache: false,
-    debug: false,
+    cache: true,
+    debug: true,
     output: {
            path: path.join(__dirname, './target/classes/static/built/'),
                 filename: 'bundle.js'
@@ -22,7 +21,8 @@ module.exports = {
                 loader: 'babel',
                 query: {
                     cacheDirectory: true,
-                    presets: ['es2015', 'react']
+                    presets: ['es2015', 'stage-1', 'react'],
+                    "plugins": ["transform-decorators-legacy"]
                 }
             }
         ]

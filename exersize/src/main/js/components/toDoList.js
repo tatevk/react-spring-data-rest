@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { observable, action } from "mobx";
+import { observer, inject} from "mobx-react";
 import Todo from './toDo';
 
+@inject('toDoListStore') @observer
 class ToDoList extends React.Component{
-debugger;
 	render() {
 	   // console.log(this.props.todoes)
-		var todoes = this.props.todoes.map(todo =>
-			<Todo key={todo._links.self.href} todo={todo}/>
+		var todoes = this.props.toDoListStore.state.todoes.map(todo =>
+			<Todo key={todo._links.self.href} todo={todo} onDelete={this.props.onDelete}/>
 		);
 		//console.log(todoes);
 		return (

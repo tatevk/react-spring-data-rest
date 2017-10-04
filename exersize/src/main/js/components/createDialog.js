@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import toDoListState from '../stores/ToDoListStore';
 
-
+// start::create-dialog[]
 class CreateDialog extends React.Component {
 
 	constructor(props) {
@@ -56,4 +57,5 @@ class CreateDialog extends React.Component {
 	}
 
 }
+// end::create-dialog[]
 export default CreateDialog;
